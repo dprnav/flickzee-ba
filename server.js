@@ -64,7 +64,7 @@ app.get('/search', (req, res) => {
 app.get('/providers', (req, res) => {
 
   var url_parts = url.parse(req.url, true);
-  var imdb = url_parts.query.imdb;
+  var id = url_parts.query.id;
   var country = url_parts.query.country;
   var mtype = url_parts.query.mtype;
   var ptype = url_parts.query.ptype;
@@ -82,7 +82,7 @@ app.get('/providers', (req, res) => {
             },
             {
               "match": {
-                "imdb": imdb
+                "id": id
               }
             },
             {
