@@ -66,8 +66,7 @@ app.get('/providers', (req, res) => {
   var url_parts = url.parse(req.url, true);
   var id = url_parts.query.id;
   var country = url_parts.query.country;
-  var mtype = url_parts.query.mtype;
-  var ptype = url_parts.query.ptype;
+
   client.search({
     index: 'monetization',
     body: {
@@ -83,16 +82,6 @@ app.get('/providers', (req, res) => {
             {
               "match": {
                 "id": id
-              }
-            },
-            {
-              "match": {
-                "mtype": mtype
-              }
-            },
-            {
-              "match": {
-                "ptype": ptype
               }
             }
           ]

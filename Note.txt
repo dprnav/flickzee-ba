@@ -1,0 +1,2 @@
+1. Add provider_id to existing monetization rows by following query:
+   -> update monetization set monetization.provider_id = (select distinct provider_id from jw_crawl_ott_list as jw where monetization.ott_name=jw.technical_name) where monetization.provider_id=0;
